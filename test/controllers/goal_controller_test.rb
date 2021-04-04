@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CalorieLogTest < ActiveSupport::TestCase
+class GoalControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

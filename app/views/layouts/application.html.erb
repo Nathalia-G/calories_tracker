@@ -8,17 +8,11 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
-    <div>
-      <% if signed_in? %>
-        <%= link_to "log_out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "sign_in", new_user_registration_path %>
-        <%= link_to "log_in", new_user_session_path %>
-      <% end %>
-    </div>
+    <%= render 'layouts/header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

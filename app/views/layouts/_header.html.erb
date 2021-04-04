@@ -1,0 +1,77 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://ibb.co/WBr3HV2" >
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+  <% if signed_in? %>
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          History
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Today
+          </a>
+          <a class="navbar-item">
+            Month
+          </a>
+          <a class="navbar-item">
+            Year
+          </a>
+        </div>
+      </div>
+
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Dates
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            My goal
+          </a>
+          <a class="navbar-item">
+            Initial guide
+          </a>
+          <a class="navbar-item">
+            My file
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            More information
+          </a>
+        </div>
+      </div>
+
+    </div>
+<%end%>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+            <% if signed_in? %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-light" %>
+            <% else %>
+                <%= link_to raw("<strong>Sign up</strong>"), new_user_registration_path, class: "button is-primary" %>
+                <%= link_to "Log in", new_user_session_path, class: "button is-light" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

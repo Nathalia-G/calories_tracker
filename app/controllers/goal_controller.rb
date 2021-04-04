@@ -1,4 +1,5 @@
-class CalorieLogController < ApplicationController
+class GoalController < ApplicationController
+    
   def index
   end
 
@@ -19,4 +20,5 @@ class CalorieLogController < ApplicationController
 
   def destroy
   end
+
 end
