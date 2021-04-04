@@ -1,0 +1,2 @@
+module CalorieLogHelper
+end
